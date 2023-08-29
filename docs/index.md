@@ -37,7 +37,19 @@ See [Basic Scala](../src/test/scala/basic.worksheet.sc)
 
 ## Functions, Methods et lambdas
 
-[Functions...](./function-method-lambda.md)
+* Method
+
+Method is a member of a class or object.
+
+* Function
+
+Function is a value.
+
+* Lambda
+
+Lambda is a function that has no name. It is also called anonymous function. It is used when we need a function for a short period of time.
+
+Litteral for function type.
 
 
 See [Functions worksheet](../src/test/scala/lambda.worksheet.sc)
@@ -46,6 +58,44 @@ See [Functions worksheet](../src/test/scala/lambda.worksheet.sc)
 
 * val vs var
 * Immutable collections
+
+How to achieve Immutability?
+
+
+### Mutable sample
+```scala
+class MutableBalance(var balance: Double) {
+  def deposit(amount: Double): Unit = {
+    balance += amount
+  }
+}
+```
+
+Issues:
+
+* balance is mutable
+* deposit is a procedure
+* deposit is not referentially transparent
+* thread safety
+
+
+### Immutable sample
+
+```scala
+class ImmutableBalance(balance: Double) {
+  def deposit(amount: Double): ImmutableBalance = {
+    ImmutableBalance(balance + amount)
+  }
+}
+```
+
+[See ImmutableBalance](../src/test/scala/immutability.worksheet.sc)
+
+## Persistent Data Structures
+
+Persistent data structures are data structures that preserve the previous version of themselves when they are modified. This allows us to use the previous version of the data structure even after it has been modified.
+
+
 
 ## Recursion and Tail Recursion
 
