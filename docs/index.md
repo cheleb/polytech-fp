@@ -24,6 +24,13 @@ Functional code is **idempotent**: the same input always gives the same output.
 
 Functional code is also modular: it's easier to test, reuse and parallelize.
 
+## Why functional programming?
+
+* Moore's law is over
+* Multicore processors
+* Parallelism
+* Concurrency
+* Distributed systems
 
 ## Basic scala
 
