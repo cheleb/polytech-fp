@@ -36,9 +36,9 @@ Functional code is also modular: it's easier to test, reuse and parallelize.
 
 * Traits
 * Case Classes
+* Sample: Options 
 * Pattern Matching
 * For Comprehensions
-* Sample: Options 
 
 See [Basic Scala](../src/test/scala/basic.worksheet.sc)
 
@@ -60,6 +60,27 @@ Litteral for function type.
 
 
 See [Functions worksheet](../src/test/scala/lambda.worksheet.sc)
+
+
+## Higher Order Functions
+
+* map
+* flatMap
+* filter
+...
+
+
+## Types
+
+A type is a set of values. A type defines a set of operations that can be performed on its values.
+
+### Algebraic Data Types
+
+### Generic Types
+ Covariance and Contravariance
+
+ https://blog.rockthejvm.com/contravariance/
+
 
 ## Immutability
 
@@ -98,6 +119,11 @@ class ImmutableBalance(balance: Double) {
 
 [See ImmutableBalance](../src/test/scala/immutability.worksheet.sc)
 
+
+### Optic, Lens, Prism ...
+
+
+
 ## Persistent Data Structures
 
 Persistent data structures are data structures that preserve the previous version of themselves when they are modified. This allows us to use the previous version of the data structure even after it has been modified.
@@ -109,12 +135,6 @@ Persistent data structures are data structures that preserve the previous versio
 * Stack safety
 * Tail Recursion Optimization
 
-## Higher Order Functions
-
-* map
-* flatMap
-* filter
-...
 
 ## Currying
 

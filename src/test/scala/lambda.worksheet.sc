@@ -22,3 +22,6 @@ def adder(x: Int)(y: Int): Int = x + y
 val addTwo = adder(2)
 
 addTwo(1)
+
+// HOF
+List(1, 2, 3)
