@@ -14,6 +14,9 @@ The goal is to provide a quick introduction to functional programming in Scala.
 
 ## What is functional programming?
 
+
+![FP-OOP](fp-oop.jpeg)
+
 "Functional programming is a programming paradigm where programs are constructed by **applying and composing functions**. It is a declarative programming paradigm in which function definitions are trees of expressions that each return a value, rather than a sequence of imperative statements which change the state of the program." (Wikipedia)
 
 Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and **avoids changing-state and mutable data**.
@@ -85,6 +88,8 @@ A type is a set of values. A type defines a set of operations that can be perfor
 
  https://blog.rockthejvm.com/contravariance/
 
+ See [variance](../src/test/scala/variance.worksheet.sc)
+
 
 ## Immutability
 
@@ -126,7 +131,13 @@ class ImmutableBalance(balance: Double) {
 
 ### Optic, Lens, Prism ...
 
-See [lenses](../src/test/scala/lenses.worksheet.sc)
+Immutability is not enough. We need to be able to access and modify immutable data structures. 
+
+See [Lenses](../src/test/scala/lenses.worksheet.sc)
+
+Optics are functional abstractions that allow us to access and modify parts of a data structure.
+
+See [monocles](../src/test/scala/lenses.worksheet.sc)
 
 
 
@@ -148,9 +159,15 @@ Persistent data structures are data structures that preserve the previous versio
 
 ## Lazy Evaluation
 
-## Streams
-
 ## Monads
+
+### Reader Monad
+
+Reader monad is a monad that allows us to sequence operations that depend on some input.
+
+
+
+
 
 ## IOs and Effects
 
