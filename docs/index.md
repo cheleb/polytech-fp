@@ -28,9 +28,11 @@ Functional code is also modular: it's easier to test, reuse and parallelize.
 
 * Moore's law is over
 * Multicore processors
+* Distributed systems
 * Parallelism
 * Concurrency
-* Distributed systems
+
+Q: Where idempotency is useful ?
 
 ## Basic scala
 
@@ -41,6 +43,8 @@ Functional code is also modular: it's easier to test, reuse and parallelize.
 * For Comprehensions
 
 See [Basic Scala](../src/test/scala/basic.worksheet.sc)
+
+See [ADT](../src/test/scala/adt.worksheet.sc)
 
 ## Functions, Methods et lambdas
 
@@ -121,6 +125,8 @@ class ImmutableBalance(balance: Double) {
 
 
 ### Optic, Lens, Prism ...
+
+See [lenses](../src/test/scala/lenses.worksheet.sc)
 
 
 
