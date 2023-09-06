@@ -22,6 +22,7 @@ def adder(x: Int)(y: Int): Int = x + y
 val addTwo = adder(2)
 
 addTwo(1)
+addTwo(5)
 
 // HOF
-List(1, 2, 3)
+List(1, 2, 3) map h

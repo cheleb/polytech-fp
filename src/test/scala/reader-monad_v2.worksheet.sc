@@ -25,6 +25,7 @@ def createUser(userName: String, age: Int): Reader[ConnectionPool, User] =
   Reader { pool =>
     User(UUID.randomUUID(), userName, age)
   }
+
 def createBankAccount(
     userId: UUID,
     amount: Int

@@ -9,6 +9,7 @@ case class Lens[Whole, Piece](
     get: Whole => Piece,
     set: Piece => Whole => Whole
 ) { self =>
+
   def update(whole: Whole)(f: Piece => Piece): Whole = {
     val oldPiece = get(whole)
     set(f(oldPiece))(whole)
