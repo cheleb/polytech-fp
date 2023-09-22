@@ -5,16 +5,25 @@ trait Cat extends Animal
 
 val medor: Dog = new Dog {}
 
-trait House[+A]:
-//  def setInhabitant(inhabitant: A): House[A] = new House[A] {}
+val animal: Animal = medor
+trait Box[A]
+
+val dogBox: Box[Dog] = new Box[Dog] {}
+
+//val animalBox: Box[Animal] = new Box[Dog] {}
+
+//val jlist: java.util.List[Animal] = new java.util.ArrayList[Dog]()
+
+trait House[+A] {
+  // def setInhabitant(inhabitant: A): House[A] = new House[A] {}
   def setInhabitant[B >: A](inhabitant: B): House[B] = new House[B] {}
 
-val dogHouse: House[Animal] = new House[Dog] {}
-val animalHouse: House[Animal] = dogHouse.setInhabitant(new Cat {})
-
+  val dogHouse: House[Animal] = new House[Dog] {}
+  val animalHouse: House[Animal] = dogHouse.setInhabitant(new Cat {})
+}
 trait Vet[-A]:
   def heal(animal: A): Unit = println("Healed")
+//val animalVet: Vet[Animal] = new Vet[Dog] {}
+val dogVet: Vet[Dog] = new Vet[Animal] {}
 
-val animalVet: Vet[Dog] = new Vet[Animal] {}
-
-animalVet.heal(medor)
+dogVet.heal(medor)

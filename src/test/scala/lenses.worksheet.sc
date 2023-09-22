@@ -1,58 +1,40 @@
-import monocle.PTraversal
-import monocle.Focus
-import monocle.syntax.all._
+case class Rating(value: Int)
+case class Manager(name: String, rating: Rating)
+case class Developper(name: String, manager: Manager)
 
-case class Address(streetNumber: Int, streetName: String)
+val jane = Manager("Jane", Rating(10))
+val john = Developper("John", jane)
 
-case class User(name: String, address: Address)
+case class Lens[Whole, Piece](
+    get: Whole => Piece,
+    set: Piece => Whole => Whole
+) { self =>
 
-val user = User("Anna", Address(12, "high street"))
+  def update(whole: Whole)(f: Piece => Piece): Whole = {
+    val oldPiece = get(whole)
+    set(f(oldPiece))(whole)
+  }
 
-user.focus(_.name).replace("Bob")
-// res: User = User("Bob", Address(12, "high street"))
-
-user.focus(_.address.streetName).modify(_.toUpperCase)
-// res: User = User("Anna", Address(12, "HIGH STREET"))
-
-user.focus(_.address.streetNumber).get
-
-case class Lecturer(firstName: String, lastName: String, salary: Int)
-case class Department(budget: Int, lecturers: List[Lecturer])
-case class University(name: String, departments: Map[String, Department])
-
-def uni(x: Int) = University(
-  "oxford",
-  Map(
-    "Computer Science" -> Department(
-      45,
-      List(
-        Lecturer("john", "doe", 10 * x),
-        Lecturer("robert", "johnson", 16 * x)
-      )
-    ),
-    "History" -> Department(
-      30,
-      List(
-        Lecturer("arnold", "stones", 20 * x)
-      )
+  def >>>[SubPiece](that: Lens[Piece, SubPiece]): Lens[Whole, SubPiece] =
+    Lens(
+      whole => that.get(self.get(whole)),
+      subPiece => whole => self.set(that.set(subPiece)(self.get(whole)))(whole)
     )
-  )
+}
+
+val manager = Lens[Developper, Manager](
+  developper => developper.manager,
+  manager => developper => developper.copy(manager = manager)
 )
 
-val poor = uni(1)
-val rich = uni(100)
+val rating: Lens[Manager, Rating] =
+  Lens(_.rating, rating => manager => manager.copy(rating = rating))
 
-val physics = Department(
-  36,
-  List(
-    Lecturer("daniel", "jones", 12),
-    Lecturer("roger", "smith", 14)
-  )
-)
+val upvote: Lens[Rating, Int] =
+  Lens(_.value, value => rating => rating.copy(value = value))
 
-val zozo: PTraversal[University, University, Int, Int] = Focus[University](
-  _.departments.at("Computer Science").some.lecturers.each.salary
-)
-zozo.lastOption(poor)
+val myOptic = manager >>> rating >>> upvote
 
-zozo.lastOption(rich)
+val newJohn = myOptic.update(john)(_ + 1)
+
+println(newJohn)

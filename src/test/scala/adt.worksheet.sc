@@ -1,9 +1,5 @@
-trait Color // interface Color
-
-object Color {
-  case object Red extends Color
-  case object Green extends Color
-  case object Blue extends Color
+enum Color {
+  case Red, Green, Blue
 }
 
 case class Ball(size: Int, color: Color)
@@ -15,10 +11,6 @@ aColor match {
   case Color.Green => "green"
   case Color.Blue  => "blue"
 }
-
-// Enum
-
-val anOption: Option[Int] = Some(1)
 
 def fill(x: Int, color: Color): Option[Ball] = x match
   case 0 => None
@@ -43,17 +35,5 @@ txs
   .toMap
 
 txs
-  .collect({ case Some(x) => x })
+  .collect { case Some(x) => x }
   .groupMapReduce(_.color)(_.size)(_ + _)
-
-extension [A](self: A)
-  def yo: String = s"Yo, $self!"
-  def yoopi: String = s"Yooppi, $self!"
-  def pipe[B](f: A => B): B = f(self)
-  def tap[B](f: A => Unit): A =
-    f(self)
-    self
-
-"zozo"
-  .tap(println)
-  .pipe(_.yoopi)
