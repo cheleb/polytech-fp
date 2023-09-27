@@ -11,6 +11,5 @@ scalacOptions ++= Seq(
   "-deprecation",
   "-feature",
   "-unchecked",
-  "-Xfatal-warnings",
-  "-Xlint"
+  "-Xfatal-warnings"
 )

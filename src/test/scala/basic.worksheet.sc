@@ -27,8 +27,8 @@ val o1 = Some(1)
 val o2 = Some(2)
 val o3 = Some(3)
 
-o1.map { i1 =>
-  o2.map { i2 =>
+o1.flatMap { i1 =>
+  o2.flatMap { i2 =>
     o3.map { i3 =>
       i1 + i2 + i3
     }
