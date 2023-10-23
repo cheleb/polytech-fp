@@ -11,7 +11,7 @@ val aColor: Color = Red
 
 aColor match {
   case Red      => "red"
-  case Green    => "green"
+  case Green    => "green" // Try to comment this line
   case Blue     => "blue"
   case Other(s) => s
 }
