@@ -1,6 +1,6 @@
 name := "Polytech FP"
 
-scalaVersion := "3.4.0"
+scalaVersion := "3.4.1"
 
 libraryDependencies ++= Seq(
   "dev.optics" %% "monocle-core" % "3.2.0",
