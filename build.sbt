@@ -5,7 +5,7 @@ scalaVersion := "3.4.0"
 libraryDependencies ++= Seq(
   "dev.optics" %% "monocle-core" % "3.2.0",
   "dev.optics" %% "monocle-macro" % "3.2.0",
-  "dev.zio" %% "zio" % "2.0.21"
+  "dev.zio" %% "zio" % "2.0.22"
 )
 scalacOptions ++= Seq(
   "-deprecation",
