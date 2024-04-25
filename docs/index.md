@@ -90,6 +90,7 @@ Q: Where idempotency is useful ?
 * Sample: Options 
 * Pattern Matching
 * For Comprehensions
+* Lazy Evaluation
 
 See [Basic Scala](../src/test/scala/basic.worksheet.sc)
 
