@@ -1,4 +1,4 @@
-trait Color // interface Color
+sealed trait Color // interface Color
 
 case object Red extends Color
 case object Green extends Color
@@ -23,7 +23,7 @@ val blueBall = Ball(1, Blue)
 redBall match {
   case Ball(size, Red)   => s"Red ball of size $size"
   case Ball(size, Green) => s"Green ball of size $size"
-  // case Ball(size, _)     => s"Other ball of size $size"
+  case Ball(size, _)     => s"Other ball of size $size"
 }
 
 val o1 = Some(1)

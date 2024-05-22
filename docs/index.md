@@ -186,7 +186,7 @@ See [Lenses](../src/test/scala/lenses.worksheet.sc)
 
 Optics are functional abstractions that allow us to access and modify parts of a data structure.
 
-See [monocles](../src/test/scala/lenses.worksheet.sc)
+See [monocles](../src/test/scala/monocles.worksheet.sc)
 
 
 

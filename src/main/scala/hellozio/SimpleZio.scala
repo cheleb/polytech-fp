@@ -1,21 +1,16 @@
 package hellozio
 
 import zio.*
+import zio.json.*
+
 import java.io.IOException
 
 object SimpleZio extends ZIOAppDefault {
 
-  val io = ZIO.sleep(2.seconds)
-    *> ZIO.fail("fail")
+  val duce: Dude = Dude(1, "Dude", Some("dodo&lol.com"))
 
-  val program =
-    for {
-      _ <- (ZIO.sleep(3.seconds) *> Console
-        .printLine("Hello ZIO!")
-        .retry(Schedule.recurs(10))
-        .timeout(1.second))
-        .zipPar(io)
-    } yield ()
-  override def run: ZIO[Any & (ZIOAppArgs & Scope), Any, Any] = program
+  override val run: ZIO[Environment & (ZIOAppArgs & Scope), Any, Any] =
+    Console.printLine("Hello ZIO!") *>
+      Console.printLine(duce.toJson)
 
 }
