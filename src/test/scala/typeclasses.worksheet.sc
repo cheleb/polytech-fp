@@ -16,4 +16,4 @@ object Monoid:
   def combineAll2[T: Monoid](xs: List[T]): T =
     xs.foldLeft(Monoid[T].unit)(_.combine(_))
 
-combineAll2(List("a", "b", "c"))
+combineAll(List("a", "b", "c"))

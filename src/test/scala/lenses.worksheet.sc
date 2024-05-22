@@ -33,8 +33,8 @@ val rating: Lens[Manager, Rating] =
 val upvote: Lens[Rating, Int] =
   Lens(_.value, value => rating => rating.copy(value = value))
 
-val myOptic = manager >>> rating >>> upvote
+val promote = manager >>> rating >>> upvote
 
-val newJohn = myOptic.update(john)(_ + 1)
+val newJohn = promote.update(john)(_ + 1)
 
 println(newJohn)

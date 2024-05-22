@@ -1,7 +1,7 @@
 def addMethod(x: Int, y: Int): Int = x + y
 
 // Function definition
-val addFunction = (x: Int, y: Int) => x + y
+val addFunction: (Int, Int) => Int = (x: Int, y: Int) => x + y
 
 addMethod(1, 1)
 addFunction(1, 1)
@@ -10,7 +10,7 @@ val f: Int => Int = x => x + 1
 val g: Int => Int = x => x * 2
 
 val ça_puis_ça: Int => Int = f andThen g
-val ça_sur_ça: Int => Int = f compose g
+val ça_sur_ça: Int => Int = f ° g
 
 ça_puis_ça(1)
 ça_sur_ça(1)
