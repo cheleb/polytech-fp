@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-stream" % PekkoVersion,
   "org.apache.pekko" %% "pekko-connectors-json-streaming" % "1.1.0-M1",
   "org.apache.pekko" %% "pekko-connectors-file" % "1.1.0-M1",
-  "co.fs2" %% "fs2-io" % "3.10.2",
+  "co.fs2" %% "fs2-io" % "3.11.0",
   "org.gnieh" %% "fs2-data-json" % "1.11.1",
   "org.gnieh" %% "fs2-data-json-circe" % "1.11.1",
   "io.circe" %% "circe-generic" % "0.14.10",
