@@ -17,6 +17,10 @@ val ça_sur_ça: Int => Int = f ° g
 
 extension [A](f: A => A) def °(g: A => A) = f compose g
 
+val h = f ° g
+
+h(1)
+
 def adder(x: Int, y: Int) = x + y
 
 def adderCurryfied(x: Int)(y: Int): Int = x + y

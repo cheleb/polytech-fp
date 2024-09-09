@@ -35,5 +35,6 @@ txs
   .toMap
 
 txs
-  .collect { case Some(x) => x }
+  // .collect { case Some(x) => x }
+  .flatten
   .groupMapReduce(_.color)(_.size)(_ + _)
