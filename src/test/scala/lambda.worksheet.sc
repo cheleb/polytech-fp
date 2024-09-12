@@ -25,7 +25,9 @@ def adder(x: Int, y: Int) = x + y
 
 def adderCurryfied(x: Int)(y: Int): Int = x + y
 
-val addTwo = adderCurryfied(2)
+def adderCurryfied2(x: Int): Int => Int = y => x + y
+
+val addTwo = adderCurryfied2(2)
 
 addTwo(1)
 addTwo(5)

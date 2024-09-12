@@ -24,12 +24,15 @@ val txs = List(
   fill(3, Color.Blue)
 )
 
+txs.collect { case Some(x) => x }
+
 txs.collect({ case Some(x) => x.size }).sum
 txs.collect { case Some(x) => x.size }.sum
+//txs.collect { case Some(x) => x.size }.sum
 
 txs
   .collect({ case Some(x) => x })
-  .groupBy(_.color)
+  .groupBy(ball => ball.color)
   .view
   .mapValues(_.map(_.size).sum)
   .toMap

@@ -17,7 +17,9 @@ libraryDependencies ++= Seq(
   "org.gnieh" %% "fs2-data-json" % "1.11.1",
   "org.gnieh" %% "fs2-data-json-circe" % "1.11.1",
   "io.circe" %% "circe-generic" % "0.14.10",
-  "io.circe" %% "circe-parser" % "0.14.10"
+  "io.circe" %% "circe-parser" % "0.14.10",
+  "com.propensive" %% "magnolia" % "0.17.0",
+  "com.softwaremill.magnolia1_3" %%% "magnolia" % "1.3.7"
 )
 scalacOptions ++= Seq(
   "-deprecation",
