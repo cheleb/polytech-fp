@@ -27,6 +27,6 @@ object DeriveShow extends AutoDerivation[Show] {
 
 }
 
-extension [A](a: Show.type)(using s: Show[A]) {
+extension [A](a: Show.type) {
   inline def derived(using Mirror.Of[A]) = DeriveShow.derived
 }
