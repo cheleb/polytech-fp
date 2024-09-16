@@ -5,7 +5,7 @@ scalaVersion := "3.5.0"
 val PekkoVersion = "1.1.0"
 
 libraryDependencies ++= Seq(
-  "dev.optics" %% "monocle-core" % "3.2.0",
+  "dev.optics" %% "monocle-core" % "3.3.0",
   "dev.optics" %% "monocle-macro" % "3.3.0",
   "dev.zio" %% "zio" % "2.1.1",
   "dev.zio" %% "zio-streams" % "2.1.9",
