@@ -9,7 +9,7 @@ object SimpleZio extends ZIOAppDefault {
 
   val duce: Dude = Dude(1, "Dude", Some("dodo&lol.com"))
 
-  override val run: ZIO[Environment & (ZIOAppArgs & Scope), Any, Any] =
+  override val run =
     Console.printLine("Hello ZIO!") *>
       Console.printLine(duce.toJson)
 
