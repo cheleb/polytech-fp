@@ -2,7 +2,7 @@ name := "Polytech FP"
 
 scalaVersion := "3.5.0"
 
-val PekkoVersion = "1.1.0"
+val PekkoVersion = "1.1.2"
 
 libraryDependencies ++= Seq(
   "dev.optics" %% "monocle-core" % "3.2.0",
