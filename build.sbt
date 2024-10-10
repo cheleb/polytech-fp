@@ -8,7 +8,7 @@ libraryDependencies ++= Seq(
   "dev.optics" %% "monocle-core" % "3.2.0",
   "dev.optics" %% "monocle-macro" % "3.3.0",
   "dev.zio" %% "zio" % "2.1.1",
-  "dev.zio" %% "zio-streams" % "2.1.9",
+  "dev.zio" %% "zio-streams" % "2.1.11",
   "dev.zio" %% "zio-json" % "0.7.3",
   "org.apache.pekko" %% "pekko-stream" % PekkoVersion,
   "org.apache.pekko" %% "pekko-connectors-json-streaming" % "1.1.0-M1",
