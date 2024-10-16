@@ -1,6 +1,6 @@
 name := "Polytech FP"
 
-scalaVersion := "3.5.0"
+scalaVersion := "3.5.2"
 
 val PekkoVersion = "1.1.0"
 
